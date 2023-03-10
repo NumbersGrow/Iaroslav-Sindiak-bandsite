@@ -1,0 +1,72 @@
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/photo';
+@use './partials/fonts';
+@use './partials/global';
+
+* {
+    box-sizing: border-box;
+}
+
+.hero-banner {
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 12rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:before {
+        content: '';
+        position: absolute;
+        background-color: $header-footer-background;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // display: block;
+    }
+
+    &__title {
+        padding-left: 16px;
+        color: $primary-background;
+        z-index: 10;
+    }
+}
+
+.main-content {
+
+    &__photo {
+        @include primary-padding;
+        max-width: 100%;
+    }
+
+    &__about {
+        @include primary-padding;
+        font-weight: bold;
+        line-height: 180%;
+    }
+
+    &__description {
+        @include primary-padding;
+
+        &--title {
+            padding-left: 0;
+            font-weight: normal;
+        }
+
+        &--paragraph {
+            padding: 0 0 20px 0;
+            line-height: 150%;
+            width: 100%;
+        }
+    }
+
+    &__gallery {
+        @include primary-padding;
+        background-color: $alternative-light;
+    }
+
+}

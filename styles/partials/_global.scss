@@ -1,0 +1,116 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2, h3 {
+    padding: 24px 0 1rem 1rem;
+
+}
+
+// main, footer {
+//     padding: 0 16px;
+// }
+
+.site-header {
+    background-color: $header-footer-background;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        width: 9rem;
+        display: flex;
+        align-self: center;
+        padding: 1rem 0;
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        text-align: center;
+    }
+
+    &__item {
+        width: 50%;
+
+        &--highlight {
+            width: 50%;
+            border-bottom: 0.2rem solid $divider;
+            padding-bottom: 0.4rem;
+        }
+    }
+
+    &__link {
+        color: $divider;
+
+        &--highlight {
+
+            color: $primary-background;
+            font-weight: bold;
+        }
+    }
+}
+
+.site-footer {
+    @include primary-padding;
+    background-color: $header-footer-background;
+    color: $divider;
+
+    &__wrapper {
+        // display: flex;
+        // flex-direction: column;
+    }
+
+    &__top {
+            
+        &--title {
+            padding-left: 0;
+        }
+
+        &--svg {
+            padding-right: 30px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+
+        &--name-position {
+            color: $primary-background;
+            padding-top: 2rem;
+        }
+
+        &--destination {
+            padding-top: 2rem;
+        }
+
+        &--email {
+            padding-top: 2rem;
+        }
+    }
+
+    &__bottom {
+
+        &--logo {
+            width: 9rem;
+            padding-top: 5.5rem;
+        }
+
+        &--text {
+            font-size: 0.7rem;
+            padding: 1rem 0;
+        }
+    }
+}
+
+
