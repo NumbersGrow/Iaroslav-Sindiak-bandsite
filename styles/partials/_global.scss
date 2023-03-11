@@ -16,15 +16,16 @@ h2, h3 {
 
 }
 
-// main, footer {
-//     padding: 0 16px;
-// }
 
 .site-header {
     background-color: $header-footer-background;
-    width: 100%;
+
     display: flex;
     flex-direction: column;
+    @include tablet {
+        flex-direction: row;
+        align-items: center;
+    }
 
     &__logo {
         width: 9rem;
@@ -34,13 +35,20 @@ h2, h3 {
     }
 
     &__list {
+        width: 100%;
         list-style: none;
         display: flex;
         text-align: center;
+        @include tablet {
+            padding-left: 4rem;
+        }
     }
 
     &__item {
         width: 50%;
+        @include tablet {
+            padding-left: 3rem;
+        }
 
         &--highlight {
             width: 50%;
@@ -53,7 +61,6 @@ h2, h3 {
         color: $divider;
 
         &--highlight {
-
             color: $primary-background;
             font-weight: bold;
         }
@@ -64,6 +71,7 @@ h2, h3 {
     @include primary-padding;
     background-color: $header-footer-background;
     color: $divider;
+    position: relative;
 
     &__wrapper {
         // display: flex;
@@ -71,6 +79,10 @@ h2, h3 {
     }
 
     &__top {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+        }
             
         &--title {
             padding-left: 0;
@@ -104,6 +116,13 @@ h2, h3 {
         &--logo {
             width: 9rem;
             padding-top: 5.5rem;
+            @include tablet {
+                padding: 0;
+                margin: 2rem 2rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
         }
 
         &--text {

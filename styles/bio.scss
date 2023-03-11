@@ -16,6 +16,9 @@
     display: flex;
     align-items: center;
     position: relative;
+    @include tablet {
+        min-height: 33rem;
+    }
 
     &:before {
         content: '';
@@ -33,10 +36,21 @@
         padding-left: 16px;
         color: $primary-background;
         z-index: 10;
+        @include tablet {
+            font-size: 4rem;
+            font-weight: 600;
+        }
     }
 }
 
 .main-content {
+
+    &__title {
+        @include tablet {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+    }
 
     &__photo {
         @include primary-padding;
@@ -57,16 +71,29 @@
             font-weight: normal;
         }
 
+        &-container {
+            @include tablet {
+                display: flex;
+            }
+        }
+
         &--paragraph {
             padding: 0 0 20px 0;
             line-height: 150%;
             width: 100%;
+            @include tablet {
+                width: 50%;
+            }
         }
     }
 
     &__gallery {
         @include primary-padding;
         background-color: $alternative-light;
+
+        &--title {
+            padding-left: 0;
+        }
     }
 
 }

@@ -1,7 +1,18 @@
-.gallery-section {
+@use './mixins' as *;
 
+.gallery-section {
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 3rem;
+    }
     &__photo {
         max-width: 100%;
         padding: 0.313rem 0;
+        @include tablet {
+            width: 14rem;
+            padding: 0.313rem 0.313rem;
+        }
     }
 }
