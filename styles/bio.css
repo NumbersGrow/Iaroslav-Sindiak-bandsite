@@ -90,12 +90,23 @@ h2, h3 {
   border-bottom: 0.2rem solid #e1e1e1;
   padding-bottom: 0.4rem;
 }
+@media (min-width: 768px) {
+  .site-header__item--highlight {
+    border-bottom: 0;
+  }
+}
 .site-header__link {
   color: #e1e1e1;
 }
 .site-header__link--highlight {
   color: #fff;
   font-weight: bold;
+}
+@media (min-width: 768px) {
+  .site-header__link--highlight {
+    border-bottom: 0.2rem solid #e1e1e1;
+    padding-bottom: 1.3rem;
+  }
 }
 
 .site-footer {
@@ -116,18 +127,24 @@ h2, h3 {
 .site-footer__top--svg {
   padding-right: 30px;
 }
-.site-footer__contact {
+@media (min-width: 768px) {
+  .site-footer__contact-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.site-footer__contact-container__contact {
   display: flex;
   flex-direction: column;
 }
-.site-footer__contact--name-position {
+.site-footer__contact-container__contact--name-position {
   color: #fff;
   padding-top: 2rem;
 }
-.site-footer__contact--destination {
+.site-footer__contact-container__contact--destination {
   padding-top: 2rem;
 }
-.site-footer__contact--email {
+.site-footer__contact-container__contact--email {
   padding-top: 2rem;
 }
 .site-footer__bottom--logo {

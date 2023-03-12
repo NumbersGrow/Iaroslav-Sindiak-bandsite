@@ -54,6 +54,9 @@ h2, h3 {
             width: 50%;
             border-bottom: 0.2rem solid $divider;
             padding-bottom: 0.4rem;
+            @include tablet {
+                border-bottom: 0;
+            }
         }
     }
 
@@ -63,6 +66,10 @@ h2, h3 {
         &--highlight {
             color: $primary-background;
             font-weight: bold;
+            @include tablet {
+                border-bottom: 0.2rem solid $divider;
+                padding-bottom: 1.3rem;
+            }
         }
     }
 }
@@ -93,21 +100,28 @@ h2, h3 {
         }
     }
 
-    &__contact {
-        display: flex;
-        flex-direction: column;
-
-        &--name-position {
-            color: $primary-background;
-            padding-top: 2rem;
+    &__contact-container {
+        @include tablet {
+            display: flex;
+            flex-direction: row;
         }
 
-        &--destination {
-            padding-top: 2rem;
-        }
+        &__contact {
+            display: flex;
+            flex-direction: column;
 
-        &--email {
-            padding-top: 2rem;
+            &--name-position {
+                color: $primary-background;
+                padding-top: 2rem;
+            }
+
+            &--destination {
+                padding-top: 2rem;
+            }
+
+            &--email {
+                padding-top: 2rem;
+            }
         }
     }
 
