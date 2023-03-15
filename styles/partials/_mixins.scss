@@ -1,7 +1,11 @@
 @use './variables' as *;
 
 @mixin primary-padding {
-    padding: 0 1rem;
+    padding: 1.5rem 1rem 1rem 1rem;
+}
+
+@mixin larger-padding {
+    padding: 3rem 0 2.25rem 2.25rem;
 }
 
 @mixin tablet {

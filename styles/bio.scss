@@ -39,6 +39,7 @@
         @include tablet {
             font-size: 4rem;
             font-weight: 600;
+            @include larger-padding;
         }
     }
 }
@@ -48,7 +49,6 @@
     &__title {
         @include tablet {
             font-size: 2.5rem;
-            font-weight: 600;
         }
     }
 

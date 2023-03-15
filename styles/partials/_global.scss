@@ -12,8 +12,10 @@ a {
 }
 
 h2, h3 {
-    padding: 24px 0 1rem 1rem;
-
+    font-weight: 600;
+    @include tablet {
+        @include larger-padding;
+    }
 }
 
 
@@ -32,6 +34,10 @@ h2, h3 {
         display: flex;
         align-self: center;
         padding: 1rem 0;
+        @include tablet {
+            margin: 1rem 1rem 1rem 36px;
+        }
+
     }
 
     &__list {
@@ -53,7 +59,6 @@ h2, h3 {
         &--highlight {
             width: 50%;
             border-bottom: 0.2rem solid $divider;
-            padding-bottom: 0.4rem;
             @include tablet {
                 border-bottom: 0;
             }
@@ -65,10 +70,10 @@ h2, h3 {
 
         &--highlight {
             color: $primary-background;
-            font-weight: bold;
+            font-weight: 600;
             @include tablet {
-                border-bottom: 0.2rem solid $divider;
-                padding-bottom: 1.3rem;
+                border-bottom: 0.3rem solid $primary-background;
+                padding-bottom: 2rem;
             }
         }
     }
@@ -79,6 +84,12 @@ h2, h3 {
     background-color: $header-footer-background;
     color: $divider;
     position: relative;
+    @include tablet {
+        padding: 0;
+        @include larger-padding;
+
+
+    }
 
     &__wrapper {
         // display: flex;
@@ -93,37 +104,53 @@ h2, h3 {
             
         &--title {
             padding-left: 0;
+            @include tablet {
+                font-size: 2.5rem;
+                padding-right: 1rem;
+            }
         }
 
         &--svg {
             padding-right: 30px;
+            @include tablet {
+                padding: 0;
+                margin: 3.4rem 1rem 0 1rem;
+                width: auto;
+                height: 1.7rem;
+
+            }
         }
     }
 
-    &__contact-container {
+    &__contact {
+        display: flex;
+        flex-direction: column;
         @include tablet {
-            display: flex;
-            flex-direction: row;
+            padding-right: 1.2rem;
         }
 
-        &__contact {
-            display: flex;
-            flex-direction: column;
+        &-container {
+            line-height: 150%;
 
-            &--name-position {
-                color: $primary-background;
-                padding-top: 2rem;
+            @include tablet {
+                display: flex;
+                flex-direction: row;
             }
+        }    
 
-            &--destination {
-                padding-top: 2rem;
-            }
+        &--name-position {
+            color: $primary-background;
+        }
 
-            &--email {
-                padding-top: 2rem;
-            }
+        &--destination {
+            padding-top: 2rem;
+        }
+
+        &--email {
+            padding-top: 2rem;
         }
     }
+
 
     &__bottom {
 
@@ -132,7 +159,7 @@ h2, h3 {
             padding-top: 5.5rem;
             @include tablet {
                 padding: 0;
-                margin: 2rem 2rem;
+                margin: 4.6rem 2rem;
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -142,6 +169,10 @@ h2, h3 {
         &--text {
             font-size: 0.7rem;
             padding: 1rem 0;
+            @include tablet {
+                padding: 3rem 0 1rem 0;
+                font-size: 1rem;
+            }
         }
     }
 }
