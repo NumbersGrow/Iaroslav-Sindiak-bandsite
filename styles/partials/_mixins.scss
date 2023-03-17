@@ -4,9 +4,27 @@
     padding: 1.5rem 1rem 1rem 1rem;
 }
 
-@mixin larger-padding {
-    padding: 3rem 0 2.25rem 2.25rem;
+@mixin primary-padding-content {
+    padding: 0 1rem 0 1rem;
 }
+
+@mixin tablet-padding {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+}
+
+@mixin tablet-larger-padding {
+    padding: 0.5rem 7.188rem 0.5rem 7.188rem;
+}
+
+@mixin desktop-padding {
+    padding: 3rem 6rem 2.25rem 6rem;
+}
+
+@mixin desktop-larger-padding {
+    padding: 0.5rem 10rem 0.5rem 10rem;
+}
+
+
 
 @mixin tablet {
     @media (min-width: $tablet-width) {

@@ -1,18 +1,21 @@
 @use './mixins' as *;
 
 .gallery-section {
+    @include primary-padding-content;
+
     @include tablet {
+        padding: 0 2.25rem 2.25rem 2.25rem;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        padding-bottom: 3rem;
+        justify-content: space-between;
     }
+
     &__photo {
         max-width: 100%;
         padding: 0.313rem 0;
+
         @include tablet {
-            width: 14rem;
-            padding: 0.313rem 0.313rem;
+            width: 31%;
         }
     }
 }

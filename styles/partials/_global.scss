@@ -13,17 +13,18 @@ a {
 
 h2, h3 {
     font-weight: 600;
+
     @include tablet {
-        @include larger-padding;
+        @include tablet-padding;
     }
 }
 
 
 .site-header {
     background-color: $header-footer-background;
-
     display: flex;
     flex-direction: column;
+
     @include tablet {
         flex-direction: row;
         align-items: center;
@@ -34,8 +35,13 @@ h2, h3 {
         display: flex;
         align-self: center;
         padding: 1rem 0;
+
         @include tablet {
             margin: 1rem 1rem 1rem 36px;
+        }
+
+        @include desktop {
+            padding-left: 4rem;
         }
 
     }
@@ -45,79 +51,103 @@ h2, h3 {
         list-style: none;
         display: flex;
         text-align: center;
+
         @include tablet {
             padding-left: 4rem;
+        }
+
+        @include desktop {
+            font-size: 0.6rem;
+            padding-left: 1rem;
         }
     }
 
     &__item {
         width: 50%;
+
         @include tablet {
             padding-left: 3rem;
         }
 
+        @include desktop {
+            padding-left: 2rem;
+        }
+
         &--highlight {
             width: 50%;
-            border-bottom: 0.2rem solid $divider;
+            border-bottom: 0.2rem solid $text-on-dark;
+            padding-bottom: 0.7rem;
+
             @include tablet {
                 border-bottom: 0;
+                padding-bottom: 0;
             }
+
         }
     }
 
     &__link {
-        color: $divider;
+        color: $text-on-dark;
 
         &--highlight {
             color: $primary-background;
             font-weight: 600;
+
             @include tablet {
                 border-bottom: 0.3rem solid $primary-background;
                 padding-bottom: 2rem;
+            }
+
+            @include desktop {
+                font-weight: 400;
+                padding-bottom: 2rem;
+                letter-spacing: 0.05rem;
             }
         }
     }
 }
 
 .site-footer {
-    @include primary-padding;
     background-color: $header-footer-background;
-    color: $divider;
+    color: $text-on-dark;
     position: relative;
+
     @include tablet {
         padding: 0;
-        @include larger-padding;
+        @include tablet-padding;
 
 
-    }
-
-    &__wrapper {
-        // display: flex;
-        // flex-direction: column;
     }
 
     &__top {
         @include tablet {
+            margin-bottom: 1.5rem;
             display: flex;
             flex-direction: row;
+            align-items: baseline;
+
         }
             
         &--title {
-            padding-left: 0;
+            color: $primary-background;
+            font-size: 1.7rem;
+            @include primary-padding;
+
             @include tablet {
-                font-size: 2.5rem;
-                padding-right: 1rem;
+                font-size: 2.6rem;
+                padding: 0 2rem 0 0;
             }
         }
 
         &--svg {
-            padding-right: 30px;
+            @include primary-padding-content;
+            padding-right: 20px;
+            width: auto;
+            height: 1.7rem;
+
             @include tablet {
                 padding: 0;
-                margin: 3.4rem 1rem 0 1rem;
-                width: auto;
-                height: 1.7rem;
-
+                margin-right: 2rem;
             }
         }
     }
@@ -125,29 +155,42 @@ h2, h3 {
     &__contact {
         display: flex;
         flex-direction: column;
+
         @include tablet {
-            padding-right: 1.2rem;
+            width: 40%;
         }
 
         &-container {
             line-height: 150%;
+            @include primary-padding;
 
             @include tablet {
+                padding: 0;
                 display: flex;
                 flex-direction: row;
             }
+
+            @include desktop {
+                width: 65%;
+            }
         }    
 
-        &--name-position {
+        &--name {
+            color: $primary-background;
+            font-weight: 400;
+            padding-top: 1rem;
+        }
+
+        &--position {
             color: $primary-background;
         }
 
         &--destination {
-            padding-top: 2rem;
+            padding-top: 1.5rem;
         }
 
         &--email {
-            padding-top: 2rem;
+            padding-top: 1.5rem;
         }
     }
 
@@ -156,10 +199,11 @@ h2, h3 {
 
         &--logo {
             width: 9rem;
-            padding-top: 5.5rem;
+            margin: 2rem 0 0 1rem;
+
             @include tablet {
                 padding: 0;
-                margin: 4.6rem 2rem;
+                margin: 3.5rem 2rem;
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -168,9 +212,10 @@ h2, h3 {
 
         &--text {
             font-size: 0.7rem;
-            padding: 1rem 0;
+            @include primary-padding;
+
             @include tablet {
-                padding: 3rem 0 1rem 0;
+                padding: 3rem 0 0 0;
                 font-size: 1rem;
             }
         }
