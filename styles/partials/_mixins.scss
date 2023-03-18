@@ -24,8 +24,6 @@
     padding: 0.5rem 10rem 0.5rem 10rem;
 }
 
-
-
 @mixin tablet {
     @media (min-width: $tablet-width) {
         @content;

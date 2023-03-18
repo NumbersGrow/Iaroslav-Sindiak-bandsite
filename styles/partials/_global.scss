@@ -13,12 +13,7 @@ a {
 
 h2, h3 {
     font-weight: 600;
-
-    @include tablet {
-        @include tablet-padding;
-    }
 }
-
 
 .site-header {
     background-color: $header-footer-background;
@@ -37,7 +32,7 @@ h2, h3 {
         padding: 1rem 0;
 
         @include tablet {
-            margin: 1rem 1rem 1rem 36px;
+            margin: 1rem 1rem 1rem 2.25rem;
         }
 
         @include desktop {
@@ -82,7 +77,6 @@ h2, h3 {
                 border-bottom: 0;
                 padding-bottom: 0;
             }
-
         }
     }
 
@@ -115,8 +109,10 @@ h2, h3 {
     @include tablet {
         padding: 0;
         @include tablet-padding;
+    }
 
-
+    @include desktop {
+        @include desktop-padding;
     }
 
     &__top {
@@ -125,7 +121,6 @@ h2, h3 {
             display: flex;
             flex-direction: row;
             align-items: baseline;
-
         }
             
         &--title {
@@ -137,17 +132,27 @@ h2, h3 {
                 font-size: 2.6rem;
                 padding: 0 2rem 0 0;
             }
+
+            @include desktop {
+                font-size: 1.6rem;
+                padding-right: 2.4rem;
+            }
         }
 
         &--svg {
             @include primary-padding-content;
-            padding-right: 20px;
+            padding-right: 1.25rem;
             width: auto;
             height: 1.7rem;
 
             @include tablet {
                 padding: 0;
                 margin-right: 2rem;
+            }
+
+            @include desktop {
+                height: 1rem;
+                margin-right: 1.3rem;
             }
         }
     }
@@ -158,6 +163,10 @@ h2, h3 {
 
         @include tablet {
             width: 40%;
+        }
+
+        @include desktop {
+            font-size: 0.7rem;
         }
 
         &-container {
@@ -171,7 +180,9 @@ h2, h3 {
             }
 
             @include desktop {
-                width: 65%;
+                width: 52%;
+                line-height: 110%;
+                font-weight: 400;
             }
         }    
 
@@ -208,6 +219,12 @@ h2, h3 {
                 right: 0;
                 top: 0;
             }
+
+            @include desktop {
+                margin-right: 6rem;
+                width: 6rem;
+            }
+
         }
 
         &--text {
@@ -217,6 +234,10 @@ h2, h3 {
             @include tablet {
                 padding: 3rem 0 0 0;
                 font-size: 1rem;
+            }
+
+            @include desktop {
+                font-size: 0.7rem;
             }
         }
     }
