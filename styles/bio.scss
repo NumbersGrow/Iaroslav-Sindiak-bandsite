@@ -17,7 +17,15 @@
     align-items: center;
     position: relative;
 
-    &:before {
+    @include tablet {
+        min-height: 50vh;
+    }
+
+    @include desktop {
+        min-height: 60vh;
+    }
+
+    &:before { //pseudo selector to create a darker piccure of the hero element
         content: '';
         position: absolute;
         background-color: $header-footer-background;
@@ -26,47 +34,152 @@
         left: 0;
         right: 0;
         bottom: 0;
-        // display: block;
     }
 
     &__title {
-        padding-left: 16px;
+        font-weight: 600;
+        padding-left: 1rem;
         color: $primary-background;
         z-index: 10;
+
+        @include tablet {
+            font-size: 4rem;
+            font-weight: 600;
+            @include tablet-padding;
+        }
+
+        @include desktop {
+            @include desktop-padding;
+            font-size: 3rem;
+        }
     }
 }
 
 .main-content {
 
-    &__photo {
+    &__title {
+        font-size: 1.7rem;
         @include primary-padding;
+
+        @include tablet {
+            @include tablet-padding;
+            font-size: 2.8rem;
+        }
+
+        @include desktop {
+            @include desktop-padding;
+            font-size: 1.7rem;
+        }
+    }
+
+    &__photo {
+        @include primary-padding-content;
         max-width: 100%;
+        
+        @include tablet {
+            @include tablet-larger-padding;
+        }
+
+        @include desktop {
+            @include desktop-larger-padding; 
+        }
     }
 
     &__about {
         @include primary-padding;
-        font-weight: bold;
+        font-weight: 600;
         line-height: 180%;
+
+        @include tablet {
+            @include tablet-larger-padding;
+            font-size: 1.5rem;
+        }
+
+        @include desktop {
+            @include desktop-larger-padding;
+            line-height: 150%;
+            font-size: 1.3rem;
+            width: 75%;
+        }
+
+        &--reference {
+
+            @include tablet {
+                font-size: 1.25rem;
+            }
+
+            @include desktop {
+                font-size: 0.875rem;
+            }
+        }
     }
 
     &__description {
-        @include primary-padding;
 
         &--title {
             padding-left: 0;
-            font-weight: normal;
+            font-weight: 600;
+            @include primary-padding;
+
+            @include tablet {
+                padding: 3rem 0 1.5rem 7.188rem;
+                font-size: 1.7rem;
+            }
+
+            @include desktop {
+                padding: 2rem 0 1.5rem 10rem;
+                font-size: 1.3rem;
+            }
+        }
+
+        &-container { //container to divide text on two columns
+            @include primary-padding-content;
+            width: 100%;
+
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+                @include tablet-larger-padding;
+            }
+
+            @include desktop {
+                @include desktop-larger-padding;
+            }
         }
 
         &--paragraph {
-            padding: 0 0 20px 0;
+            padding: 0 0 1.25rem 0;
             line-height: 150%;
-            width: 100%;
+
+            @include tablet {
+                font-size: 1rem;
+                width: 47%;
+            }
+
+            @include desktop {
+                font-size: 0.875rem;
+                width: 49%;
+            }
         }
     }
 
     &__gallery {
-        @include primary-padding;
-        background-color: $alternative-light;
+        background-color: $gallery-background;
+
+        &--title {
+            font-size: 1.7rem;
+            @include primary-padding;
+
+            @include tablet {
+                @include tablet-padding;
+                font-size: 2.8rem;
+            }
+
+            @include desktop {
+                padding: 3rem 6rem 0 6rem;
+                font-size: 1.6rem;
+            }
+        }
     }
 
 }

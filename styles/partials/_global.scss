@@ -8,76 +8,158 @@
 }
 
 a {
+    color: inherit;
     text-decoration: none;
 }
 
 h2, h3 {
-    padding: 24px 0 1rem 1rem;
-
+    font-weight: 600;
 }
-
-// main, footer {
-//     padding: 0 16px;
-// }
 
 .site-header {
     background-color: $header-footer-background;
-    width: 100%;
     display: flex;
     flex-direction: column;
+    &:hover {
+        background-color: purple;
+        transition: 2s;
+    }
+
+    @include tablet {
+        flex-direction: row;
+        align-items: center;
+    }
 
     &__logo {
         width: 9rem;
         display: flex;
         align-self: center;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
+
+        @include tablet {
+            padding: 0;
+            margin: 1rem 1rem 1rem 2.25rem;
+        }
+
+        @include desktop {
+            width: 8rem;
+            padding-left: 2rem;
+        }
     }
 
     &__list {
+        width: 100%;
         list-style: none;
         display: flex;
         text-align: center;
+
+        @include tablet {
+            padding-left: 4rem;
+        }
+
+        @include desktop {
+            font-size: 0.6rem;
+            padding-left: 6rem;
+        }
     }
 
     &__item {
         width: 50%;
 
+        @include tablet {
+            padding-left: 3rem;
+        }
+
+        @include desktop {
+            padding-left: 2rem;
+        }
+
         &--highlight {
             width: 50%;
-            border-bottom: 0.2rem solid $divider;
-            padding-bottom: 0.4rem;
+            border-bottom: 0.2rem solid $text-on-dark;
+            padding-bottom: 0.7rem;
+
+            @include tablet {
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
         }
     }
 
     &__link {
-        color: $divider;
+        color: $text-on-dark;
 
         &--highlight {
-
             color: $primary-background;
-            font-weight: bold;
+            font-weight: 600;
+
+            @include tablet {
+                border-bottom: 0.3rem solid $primary-background;
+                padding-bottom: 2rem;
+            }
+
+            @include desktop {
+                font-weight: 400;
+                padding-bottom: 2.1rem;
+                letter-spacing: 0.05rem;
+            }
         }
     }
 }
 
 .site-footer {
-    @include primary-padding;
     background-color: $header-footer-background;
-    color: $divider;
+    color: $text-on-dark;
+    position: relative;
 
-    &__wrapper {
-        // display: flex;
-        // flex-direction: column;
+    @include tablet {
+        padding: 0;
+        @include tablet-padding;
+    }
+
+    @include desktop {
+        @include desktop-padding;
     }
 
     &__top {
+        @include tablet {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+        }
             
         &--title {
-            padding-left: 0;
+            color: $primary-background;
+            font-size: 1.7rem;
+            @include primary-padding;
+
+            @include tablet {
+                font-size: 2.6rem;
+                padding: 0 2rem 0 0;
+            }
+
+            @include desktop {
+                font-size: 1.6rem;
+                padding-right: 2.4rem;
+            }
         }
 
         &--svg {
-            padding-right: 30px;
+            @include primary-padding-content;
+            padding-right: 1.25rem;
+            width: auto;
+            height: 1.7rem;
+
+            @include tablet {
+                padding: 0;
+                margin-right: 2rem;
+            }
+
+            @include desktop {
+                height: 1rem;
+                margin-right: 1.3rem;
+            }
         }
     }
 
@@ -85,30 +167,84 @@ h2, h3 {
         display: flex;
         flex-direction: column;
 
-        &--name-position {
+        @include tablet {
+            width: 40%;
+        }
+
+        @include desktop {
+            font-size: 0.875rem;
+        }
+
+        &-container {
+            line-height: 150%;
+            @include primary-padding;
+
+            @include tablet {
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+            }
+
+            @include desktop {
+                width: 60%;
+                line-height: 110%;
+                font-weight: 400;
+            }
+        }    
+
+        &--name {
             color: $primary-background;
-            padding-top: 2rem;
+            font-weight: 400;
+            padding-top: 1rem;
+        }
+
+        &--position {
+            color: $primary-background;
         }
 
         &--destination {
-            padding-top: 2rem;
+            padding-top: 1.5rem;
         }
 
         &--email {
-            padding-top: 2rem;
+            padding-top: 1.5rem;
         }
     }
+
 
     &__bottom {
 
         &--logo {
             width: 9rem;
-            padding-top: 5.5rem;
+            margin: 2rem 0 0 1rem;
+
+            @include tablet {
+                padding: 0;
+                margin: 3.5rem 2rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            @include desktop {
+                margin-right: 6rem;
+                width: 6rem;
+            }
+
         }
 
         &--text {
             font-size: 0.7rem;
-            padding: 1rem 0;
+            @include primary-padding;
+
+            @include tablet {
+                padding: 3rem 0 0 0;
+                font-size: 1rem;
+            }
+
+            @include desktop {
+                font-size: 0.875rem;
+            }
         }
     }
 }
