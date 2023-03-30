@@ -1,0 +1,326 @@
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("woff2");
+  src: url(../../assets/fonts/AvenirNextLTPro-Bold.otf) format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("woff2");
+  src: url(../../assets/fonts/AvenirNextLTPro-Regular.otf) format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("woff2");
+  src: url(../../assets/fonts/AvenirNextLTPro-Demi.otf) format("woff");
+  font-weight: 600;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h2, h3 {
+  font-weight: 600;
+}
+
+.site-header {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+}
+.site-header:hover {
+  background-color: purple;
+  transition: 2s;
+}
+@media (min-width: 768px) {
+  .site-header {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.site-header__logo {
+  width: 9rem;
+  display: flex;
+  align-self: center;
+  padding: 0.5rem 0;
+}
+@media (min-width: 768px) {
+  .site-header__logo {
+    padding: 0;
+    margin: 1rem 1rem 1rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .site-header__logo {
+    width: 8rem;
+    padding-left: 2rem;
+  }
+}
+.site-header__list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .site-header__list {
+    padding-left: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .site-header__list {
+    font-size: 0.6rem;
+    padding-left: 6rem;
+  }
+}
+.site-header__item {
+  width: 50%;
+}
+@media (min-width: 768px) {
+  .site-header__item {
+    padding-left: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .site-header__item {
+    padding-left: 2rem;
+  }
+}
+.site-header__item--highlight {
+  width: 50%;
+  border-bottom: 0.2rem solid #e1e1e1;
+  padding-bottom: 0.7rem;
+}
+@media (min-width: 768px) {
+  .site-header__item--highlight {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+.site-header__link {
+  color: #e1e1e1;
+}
+.site-header__link--highlight {
+  color: #fff;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .site-header__link--highlight {
+    border-bottom: 0.3rem solid #fff;
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .site-header__link--highlight {
+    font-weight: 400;
+    padding-bottom: 2.1rem;
+    letter-spacing: 0.05rem;
+  }
+}
+
+.site-footer {
+  background-color: #323232;
+  color: #e1e1e1;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .site-footer {
+    padding: 0;
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .site-footer {
+    padding: 3rem 6rem 2.25rem 6rem;
+  }
+}
+@media (min-width: 768px) {
+  .site-footer__top {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+.site-footer__top--title {
+  color: #fff;
+  font-size: 1.7rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .site-footer__top--title {
+    font-size: 2.6rem;
+    padding: 0 2rem 0 0;
+  }
+}
+@media (min-width: 1280px) {
+  .site-footer__top--title {
+    font-size: 1.6rem;
+    padding-right: 2.4rem;
+  }
+}
+.site-footer__top--svg {
+  padding: 0 1rem 0 1rem;
+  padding-right: 1.25rem;
+  width: auto;
+  height: 1.7rem;
+}
+@media (min-width: 768px) {
+  .site-footer__top--svg {
+    padding: 0;
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .site-footer__top--svg {
+    height: 1rem;
+    margin-right: 1.3rem;
+  }
+}
+.site-footer__contact {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .site-footer__contact {
+    width: 40%;
+  }
+}
+@media (min-width: 1280px) {
+  .site-footer__contact {
+    font-size: 0.875rem;
+  }
+}
+.site-footer__contact-container {
+  line-height: 150%;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .site-footer__contact-container {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (min-width: 1280px) {
+  .site-footer__contact-container {
+    width: 60%;
+    line-height: 110%;
+    font-weight: 400;
+  }
+}
+.site-footer__contact--name {
+  color: #fff;
+  font-weight: 400;
+  padding-top: 1rem;
+}
+.site-footer__contact--position {
+  color: #fff;
+}
+.site-footer__contact--destination {
+  padding-top: 1.5rem;
+}
+.site-footer__contact--email {
+  padding-top: 1.5rem;
+}
+.site-footer__bottom--logo {
+  width: 9rem;
+  margin: 2rem 0 0 1rem;
+}
+@media (min-width: 768px) {
+  .site-footer__bottom--logo {
+    padding: 0;
+    margin: 3.5rem 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .site-footer__bottom--logo {
+    margin-right: 6rem;
+    width: 6rem;
+  }
+}
+.site-footer__bottom--text {
+  font-size: 0.7rem;
+  padding: 1.5rem 1rem 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .site-footer__bottom--text {
+    padding: 3rem 0 0 0;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .site-footer__bottom--text {
+    font-size: 0.875rem;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hero-banner {
+  background-image: url(../assets/images/hero-shows.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 12rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+.hero-banner::before {
+  content: "";
+  position: absolute;
+  background-color: #323232;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.hero-banner__subtitle {
+  font-weight: 400;
+  font-size: 1rem;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  width: 70%;
+  color: #fff;
+  z-index: 10;
+}
+.hero-banner__title {
+  font-weight: 600;
+  padding-left: 1rem;
+  padding-top: 2rem;
+  width: 70%;
+  color: #fff;
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .hero-banner__title {
+    font-size: 4rem;
+    font-weight: 600;
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-banner__title {
+    padding: 3rem 6rem 2.25rem 6rem;
+    font-size: 3rem;
+  }
+}
+.hero-banner__song {
+  z-index: 10;
+  padding: 1rem 1rem 2rem 1rem;
+}/*# sourceMappingURL=shows.css.map */
