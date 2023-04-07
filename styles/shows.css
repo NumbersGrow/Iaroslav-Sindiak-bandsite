@@ -22,6 +22,10 @@
   font-family: Avenir, Arial, Helvetica, sans-serif;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -54,8 +58,8 @@ h2, h3 {
 }
 @media (min-width: 768px) {
   .site-header__logo {
+    margin: 1rem 2rem 1rem 1.3rem;
     padding: 0;
-    margin: 1rem 1rem 1rem 2.25rem;
   }
 }
 @media (min-width: 1280px) {
@@ -70,15 +74,10 @@ h2, h3 {
   display: flex;
   text-align: center;
 }
-@media (min-width: 768px) {
-  .site-header__list {
-    padding-left: 4rem;
-  }
-}
 @media (min-width: 1280px) {
   .site-header__list {
     font-size: 0.6rem;
-    padding-left: 6rem;
+    margin-left: 3rem;
   }
 }
 .site-header__item {
@@ -86,12 +85,12 @@ h2, h3 {
 }
 @media (min-width: 768px) {
   .site-header__item {
-    padding-left: 3rem;
+    margin: 0 1rem 0 2rem;
   }
 }
 @media (min-width: 1280px) {
   .site-header__item {
-    padding-left: 2rem;
+    margin: 0 1rem 0 1rem;
   }
 }
 .site-header__item--highlight {
@@ -323,4 +322,85 @@ h2, h3 {
 .hero-banner__song {
   z-index: 10;
   padding: 1rem 1rem 2rem 1rem;
+}
+@media (min-width: 768px) {
+  .hero-banner__song {
+    width: 60%;
+  }
+}
+
+.main-content__title {
+  padding: 2.2rem 0 1.1rem 1rem;
+  font-size: 1.9rem;
+}
+.main-content__concerts-tablet {
+  display: none;
+}
+@media (min-width: 768px) {
+  .main-content__concerts-tablet {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+  }
+}
+.main-content__concerts-tablet--subtitle {
+  text-transform: uppercase;
+  color: #Afafaf;
+  font-size: 0.8rem;
+  padding: 2rem 8rem 1rem 0;
+}
+.main-content__concerts {
+  width: 100%;
+  border-bottom: 0.15rem solid #e1e1e1;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .main-content__concerts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+.main-content__subtitle {
+  text-transform: uppercase;
+  color: #Afafaf;
+  font-size: 0.8rem;
+  padding: 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .main-content__subtitle {
+    display: none;
+  }
+}
+.main-content__date {
+  font-weight: 600;
+  padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .main-content__date {
+    padding-right: 4rem;
+  }
+}
+.main-content__venue {
+  padding-left: 1rem;
+}
+@media (min-width: 768px) {
+  .main-content__venue {
+    padding-right: 4rem;
+  }
+}
+.main-content__location {
+  padding-left: 1rem;
+}
+.main-content__button {
+  display: flex;
+  text-transform: uppercase;
+  background-color: #323232;
+  color: #fff;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 0.2rem;
+  border: 0;
+  padding: 0.8rem 5rem 0.8rem 5rem;
+  margin: 1rem 1rem 1rem 1rem;
 }/*# sourceMappingURL=shows.css.map */

@@ -63,5 +63,96 @@
         z-index: 10;
         padding: 1rem 1rem 2rem 1rem;
 
+        @include tablet {
+            width: 60%;
+        }
     }
 }
+
+.main-content {
+
+    &__title {
+        padding: 2.2rem 0 1.1rem 1rem;
+        font-size: 1.9rem;
+    }
+
+    &__concerts-box {
+        // flex-wrap: wrap;
+        
+    }
+
+    &__concerts-tablet {
+        display: none;
+
+        @include tablet{
+            display: flex;
+            flex-direction: row;
+            padding-left: 1rem;
+        }
+
+        &--subtitle {
+            text-transform: uppercase;
+            color: $highlight;
+            font-size: 0.8rem;
+            padding: 2rem 8rem 1rem 0;
+        }
+    }
+
+
+    &__concerts {
+        width: 100%;
+        border-bottom: 0.15rem solid $text-on-dark;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        color: $highlight;
+        font-size: 0.8rem;
+        padding: 1rem 1rem;
+
+        @include tablet{
+            display: none;
+        }
+    }
+
+    &__date {
+        font-weight: 600;
+        padding-left: 1rem;
+
+        @include tablet{
+            padding-right: 4rem;
+        }
+    }
+
+    &__venue {
+        padding-left: 1rem;
+        @include tablet{
+            padding-right: 4rem;
+        }
+    }
+
+    &__location {
+        padding-left: 1rem;
+    }
+
+    &__button {
+        display: flex;
+        text-transform: uppercase;
+        background-color: $header-footer-background;
+        color: $primary-background;
+        text-align: center;
+        font-size: 1.3rem;
+        border-radius: 0.2rem;
+        border: 0;
+        padding: 0.8rem 5rem 0.8rem 5rem;
+        margin: 1rem 1rem 1rem 1rem;
+    }
+}
+
