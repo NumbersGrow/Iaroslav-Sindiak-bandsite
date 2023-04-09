@@ -349,6 +349,11 @@ h2, h3 {
   font-size: 0.8rem;
   padding: 2rem 8rem 1rem 0;
 }
+@media (min-width: 768px) {
+  .main-content__wrapper {
+    flex-direction: column;
+  }
+}
 .main-content__concerts {
   width: 100%;
   border-bottom: 0.15rem solid #e1e1e1;
@@ -357,7 +362,6 @@ h2, h3 {
 @media (min-width: 768px) {
   .main-content__concerts {
     display: flex;
-    flex-direction: row;
     align-items: center;
   }
 }

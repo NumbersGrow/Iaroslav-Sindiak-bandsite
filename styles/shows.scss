@@ -98,6 +98,12 @@
         }
     }
 
+    &__wrapper {
+        @include tablet {
+        // display: flex;
+        flex-direction: column;
+        }
+    }
 
     &__concerts {
         width: 100%;
@@ -106,7 +112,7 @@
 
         @include tablet {
             display: flex;
-            flex-direction: row;
+            // flex-direction: column;
             align-items: center;
         }
     }
