@@ -1,24 +1,24 @@
 const commentsArr = [
     {
-    "name": "Connor Walton",
-    "comment": "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    "id": "b79f9700-1148-4ed8-ba65-38c3e2ab28c2",
-    "likes": 0,
-    "timestamp": 1613538000000
+    name: "Connor Walton",
+    comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+    id: "b79f9700-1148-4ed8-ba65-38c3e2ab28c2",
+    likes: 0,
+    timestamp: 1613538000000
     },
     {
-    "name": "Emilie Beach",
-    "comment": "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    "id": "1d65acf3-8b27-4342-bea7-fc53cf552f31",
-    "likes": 0,
-    "timestamp": 1610168400000
+    name: "Emilie Beach",
+    comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+    id: "1d65acf3-8b27-4342-bea7-fc53cf552f31",
+    likes: 0,
+    timestamp: 1610168400000
     },
     {
-    "name": "Miles Acosta",
-    "comment": "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    "id": "2cc81763-74a6-4ee1-9a5a-d8906981ece1",
-    "likes": 0,
-    "timestamp": 1608440400000
+    name: "Miles Acosta",
+    comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+    id: "2cc81763-74a6-4ee1-9a5a-d8906981ece1",
+    likes: 0,
+    timestamp: 1608440400000
     }
     ]
 
@@ -66,44 +66,91 @@ formDiv.appendChild(labelComment);
 formDiv.appendChild(inputComment);
 formDiv.appendChild(formButton);
 
+//create default comment boxes
+const commentBox = document.querySelector(".comment-box__default");
 
-    const itemForm = document.querySelector('.comment-box__form');
-    const noteList = document.querySelector('.comment-box__list');
+// append array of shows to dom element
+function appendComments(comments, boxElem) { // 
+comments.forEach(function (comment) {
+// create <div> card for default comments
+const commentBoxCard = document.createElement("div");
+commentBoxCard.classList.add("comment-box__default"); 
+// create <div> for avatar
+const avatarBox = document.createElement("div");
+avatarBox.classList.add("comment-box__avatar-box");
+// create <div> avatar
+const avatarDefault = document.createElement("div");
+avatarDefault.classList.add("comment-box__avatar-default");
+// create <div> for name and date
+const commentTopBox = document.createElement("div");
+commentTopBox.classList.add("comment-box__top-box");
+// create <h3> for name
+const defaultName = document.createElement("h3");
+defaultName.classList.add("comment-box__name-default");
+defaultName.innerText = comment.name;
+// create <p> for date
+const defaultDate = document.createElement("p");
+defaultDate.classList.add("comment-box__date-default");
+defaultDate.innerText = comment.timestamp;
+// create <p> for comment
+const defaultComment = document.createElement("p");
+defaultComment.classList.add("comment-box__comment-default");
+defaultComment.innerText = comment.comment;
+
+// append nodes to dom, first append all created elements to the <li>
+
+commentBoxCard.appendChild(avatarBox);
+avatarBox.appendChild(avatarDefault);
+commentBoxCard.appendChild(commentTopBox);
+commentTopBox.appendChild(defaultName);
+commentTopBox.appendChild(defaultDate);
+commentBoxCard.appendChild(defaultComment);
+// append created <li> to <ul>
+    boxElem.appendChild(commentBoxCard);
+});
+};
+
+  // call appendComments function
+appendComments(commentsArr, commentBox);
+
+//code for posting comments
+const itemForm = document.querySelector('.comment-box__form');
+const noteList = document.querySelector('.comment-box__list');
     
-    const notes = [];
+const notes = [];
     
-    itemForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const noteNameVal = event.target.username.value; // itemInput matches form input value of the name attr
-      const noteContentVal = event.target.comment.value;
-      // check the both input fields have a value
-      if (noteNameVal !== '' && noteContentVal !== '') {
-        notes.push({
-          title: noteNameVal,
-          content: noteContentVal,
-        });
-        renderNotes();
-        event.target.reset();
-      } else {
+itemForm.addEventListener('submit', function (event) {
+event.preventDefault();
+const noteNameVal = event.target.username.value; // itemInput matches form input value of the name attr
+const noteContentVal = event.target.comment.value;
+// check the both input fields have a value
+if (noteNameVal !== '' && noteContentVal !== '') {
+notes.push({
+    title: noteNameVal,
+    content: noteContentVal,
+});
+    renderNotes();
+    event.target.reset();
+    } else {
         alert('please enter some text');
-      }
-    });
+    }
+});
     
-    function renderNotes() {
-      noteList.innerHTML = '';
-      notes.forEach(function (note) {
-        const noteLi = document.createElement('li');
-        const noteTitle = document.createElement('h3');
-        noteTitle.innerText = note.title;
-        const noteContent = document.createElement('p');
-        noteContent.innerText = note.content;
+function renderNotes() {
+    noteList.innerHTML = '';
+    notes.forEach(function (note) {
+    const noteLi = document.createElement('li');
+    const noteTitle = document.createElement('h3');
+    noteTitle.innerText = note.title;
+    const noteContent = document.createElement('p');
+    noteContent.innerText = note.content;
     
         noteLi.appendChild(noteTitle);
         noteLi.appendChild(noteContent);
         noteList.appendChild(noteLi);
-      });
-    }
-    renderNotes();
+    });
+}
+renderNotes();
 
     // const itemForm = document.getElementById('itemForm');
     // const dynamicContent = document.getElementById('dynamicContent');
