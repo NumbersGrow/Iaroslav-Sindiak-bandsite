@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+::placeholder { 
+    color: black;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+  }
+
 .hero-banner {
     background-image: url(../assets/images/hero-bio.jpg);
     background-position: center;
@@ -185,19 +190,108 @@
 }
 
 .comment-box {
+    margin: 1.5rem 1rem 1rem 1rem;
+
+    &__title {
+        font-size: 1.7rem;
+        padding-bottom: 1rem;
+    }
 
     &__form {
         display: flex;
+        border-bottom: solid 0.15rem $text-on-dark;
+        padding-bottom: 1rem;
     }
 
     &__avatar {
         width: 3rem;
         height: 3rem;
         border-radius: 50%;
+        margin-top: 2.5rem;
     }
 
     &__wrapper {
         display: flex;
         flex-direction: column;
+        width: 100%;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        color: $highlight;
+        font-weight: 600;
+        font-size: 0.8rem;
+        padding: 1rem 0 0.5rem 0;
+    }
+
+    &__input-name {
+        // border-radius: 0.25rem;
+        height: 2.25rem;
+    }
+
+    &__input-comment {
+        border-radius: 0.25rem;
+        height: 6rem;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        background-color: $header-footer-background;
+        color: $primary-background;
+        font-size: 1.3rem;
+        border-radius: 0.5rem;
+        border: 0;
+        margin-top: 1rem;
+        height: 3rem;
+    }
+
+    &__default {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card-default {
+        display: flex;
+        border-bottom: solid 0.15rem $text-on-dark;
+        padding: 1rem 0 1rem 0;
+    }
+
+    &__avatar-box {
+        display: flex;
+        padding-right: 1rem;
+    }
+
+    &__avatar-default {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: $text-on-dark;
+    }
+
+    &__wrapper-default {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__top-box {
+        display: flex;
+        padding-bottom: 0.6rem;
+    }
+
+    &__name-default {
+        flex: 50%;
+        font-size: 1rem;
+    }
+
+    &__date-default {
+        color: $highlight;
+        font-size: 1rem;
+    }
+
+    &__comment-default {
+
     }
 }

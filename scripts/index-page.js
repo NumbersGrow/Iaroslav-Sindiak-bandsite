@@ -1,4 +1,4 @@
-const commentsArr = [
+const commentsArr = [ //array with default comments
     {
     name: "Connor Walton",
     comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
@@ -26,6 +26,9 @@ const formBox = document.querySelector(".comment-box__title");
 //create form dynamically
 const form = document.createElement("form");
 form.classList.add("comment-box__form");
+// create <div> for the avatar for better structure
+const avatarDynamicBox = document.createElement("div");
+avatarDynamicBox.classList.add("comment-box__avatar-box");
 //create avatar
 const formAvatar = document.createElement("img");
 formAvatar.classList.add("comment-box__avatar");
@@ -37,17 +40,21 @@ formDiv.classList.add("comment-box__wrapper");
 //create labels
 const labelName = document.createElement("label");
 const labelComment = document.createElement("label");
+labelName.classList.add("comment-box__label");
+labelComment.classList.add("comment-box__label");
 labelName.setAttribute("for", "");
 labelComment.setAttribute("for", "");
 labelName.innerText = "name";
 labelComment.innerText = "comment";
 //create an input for Username
 const inputName = document.createElement("input");
+inputName.classList.add("comment-box__input-name");
 inputName.setAttribute("type", "text");
 inputName.setAttribute("name", "username");
 inputName.setAttribute("placeholder", "Enter your name");
 //create a text area for Comment
 const inputComment = document.createElement("textarea");
+inputComment.classList.add("comment-box__input-comment");
 inputComment.setAttribute("name", "comment");
 inputComment.setAttribute("placeholder", "Add a new comment");
 //create a button
@@ -58,7 +65,9 @@ formButton.innerText = "comment";
 
 //Append all elements to the page
 formBox.appendChild(form);
-form.appendChild(formAvatar);
+form.appendChild(avatarDynamicBox);
+avatarDynamicBox.appendChild(formAvatar);
+// form.appendChild(formAvatar);
 form.appendChild(formDiv);
 formDiv.appendChild(labelName);
 formDiv.appendChild(inputName);
@@ -74,10 +83,13 @@ function appendComments(comments, boxElem) { //
 comments.forEach(function (comment) {
 // create <div> card for default comments
 const commentBoxCard = document.createElement("div");
-commentBoxCard.classList.add("comment-box__default"); 
-// create <div> for avatar
+commentBoxCard.classList.add("comment-box__card-default"); 
+// create <div> for the left part of the default card (avatar)
 const avatarBox = document.createElement("div");
 avatarBox.classList.add("comment-box__avatar-box");
+//create <div> wrapper for the right part of the default card (name/date/comment)
+const contentBox = document.createElement("div");
+contentBox.classList.add("comment-box__wrapper-default");
 // create <div> avatar
 const avatarDefault = document.createElement("div");
 avatarDefault.classList.add("comment-box__avatar-default");
@@ -101,16 +113,17 @@ defaultComment.innerText = comment.comment;
 
 commentBoxCard.appendChild(avatarBox);
 avatarBox.appendChild(avatarDefault);
-commentBoxCard.appendChild(commentTopBox);
+commentBoxCard.appendChild(contentBox);
+contentBox.appendChild(commentTopBox);
 commentTopBox.appendChild(defaultName);
 commentTopBox.appendChild(defaultDate);
-commentBoxCard.appendChild(defaultComment);
+contentBox.appendChild(defaultComment);
 // append created <li> to <ul>
     boxElem.appendChild(commentBoxCard);
 });
 };
 
-  // call appendComments function
+// call appendComments function
 appendComments(commentsArr, commentBox);
 
 //code for posting comments
@@ -151,30 +164,3 @@ function renderNotes() {
     });
 }
 renderNotes();
-
-    // const itemForm = document.getElementById('itemForm');
-    // const dynamicContent = document.getElementById('dynamicContent');
-    
-    // itemForm.addEventListener('submit', function (event) {
-    //   event.preventDefault();
-    //   const itemInputVal = event.target.itemInput.value; // itemInput matches form input value of the name attr
-    //   const listElement = document.createElement('li');
-    //   listElement.innerText = itemInputVal;
-    //   dynamicContent.appendChild(listElement);
-    // });
-
-// const form = document.querySelector('form');
-
-// form.addEventListener('submit', (event) => {
-//     event.preventDefault();
-
-//     const theFormObject = event.target;
-
-//     const email = theFormObject.username.value;
-//     const password = theFormObject.password.value;
-//     const frailty = theFormObject.nikoflaw.value;
-
-//     console.log('email', email);
-//     console.log('password', password);
-//     console.log('frailty', frailty);
-// });
