@@ -98,24 +98,29 @@
         }
     }
 
-    &__wrapper {
-        @include tablet {
-        // display: flex;
-        flex-direction: column;
-        }
-    }
-
-    &__concerts {
+    &__concert-card {
         width: 100%;
         border-bottom: 0.15rem solid $text-on-dark;
-        margin-bottom: 1rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
 
         @include tablet {
-            display: flex;
-            // flex-direction: column;
-            align-items: center;
+        display: flex;
+        align-items: center;
         }
     }
+
+    // &__concerts {
+    //     width: 100%;
+    //     border-bottom: 0.15rem solid $text-on-dark;
+    //     margin-bottom: 1rem;
+
+    //     @include tablet {
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //     }
+    // }
 
     &__subtitle {
         text-transform: uppercase;
@@ -123,7 +128,7 @@
         font-size: 0.8rem;
         padding: 1rem 1rem;
 
-        @include tablet{
+        @include tablet {
             display: none;
         }
     }
@@ -132,24 +137,34 @@
         font-weight: 600;
         padding-left: 1rem;
 
-        @include tablet{
-            padding-right: 4rem;
+        @include tablet {
+            padding: 0;
+            flex: 1;
         }
     }
 
     &__venue {
         padding-left: 1rem;
-        @include tablet{
-            padding-right: 4rem;
+
+        @include tablet {
+            padding: 0;
+            flex: 1;
         }
     }
 
     &__location {
         padding-left: 1rem;
+
+        @include tablet{
+            padding: 0;
+            flex: 1;
+        }
     }
 
     &__button {
         display: flex;
+        justify-content: center;
+        align-items: center;
         text-transform: uppercase;
         background-color: $header-footer-background;
         color: $primary-background;
@@ -157,8 +172,12 @@
         font-size: 1.3rem;
         border-radius: 0.2rem;
         border: 0;
-        padding: 0.8rem 5rem 0.8rem 5rem;
-        margin: 1rem 1rem 1rem 1rem;
+        height: 3rem;
+        width: 100%;
+
+        @include tablet{
+            width: 12rem;
+        }
     }
 }
 

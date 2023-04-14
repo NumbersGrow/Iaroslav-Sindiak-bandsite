@@ -1,4 +1,4 @@
-const concertsArr = [
+const concertsArr = [ //array with all shows
     {
         date: "Mon Sept 06 2021",
         venue: "Ronald Lane",
@@ -31,14 +31,14 @@ const concertsArr = [
     }
 ];
 
-const showsList = document.querySelector(".main-content__concerts");
+const showsBox = document.querySelector(".main-content__concerts-box");
 
 // append array of shows to dom element
-function appendShows(concerts, listElem) {
+function appendShows(concerts, BoxElem) {
 concerts.forEach(function (show) {
-// create <li>
-const showLi = document.createElement("ul"); //it was li item
-showLi.classList.add("main-content__concerts"); //it was main-content__list-item
+// create <div> for show card
+const showCard = document.createElement("div"); //it was li item showLi
+showCard.classList.add("main-content__concert-card"); //it was main-content__list-item
 // create <p> date subtitle
 const showSubtitleDate = document.createElement("p");
 showSubtitleDate.classList.add("main-content__subtitle");
@@ -68,19 +68,18 @@ const showButton = document.createElement("button");
 showButton.innerText = "buy tickets";
 showButton.classList.add("main-content__button");
   
-// append nodes to dom, first append all created elements to the <li>
-
-showLi.appendChild(showSubtitleDate);
-showLi.appendChild(showDate);
-showLi.appendChild(showSubtitleVenue);
-showLi.appendChild(showVenue);
-showLi.appendChild(showSubtitleLocation);
-showLi.appendChild(showLocation);
-showLi.appendChild(showButton);
-// append created <li> to <ul>
-    listElem.appendChild(showLi);
+// append nodes to dom, first append all created elements to the <div> show card
+showCard.appendChild(showSubtitleDate);
+showCard.appendChild(showDate);
+showCard.appendChild(showSubtitleVenue);
+showCard.appendChild(showVenue);
+showCard.appendChild(showSubtitleLocation);
+showCard.appendChild(showLocation);
+showCard.appendChild(showButton);
+// append created <div> to section
+    BoxElem.appendChild(showCard);
     });
   }
   
   // call appendShows function
-  appendShows(concertsArr, showsList);
+  appendShows(concertsArr, showsBox);

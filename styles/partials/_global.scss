@@ -118,10 +118,12 @@ h2, h3 {
     @include tablet {
         padding: 0;
         @include tablet-padding;
+        margin-top: 2rem;
     }
 
     @include desktop {
         @include desktop-padding;
+        margin-top: 2rem;
     }
 
     &__top {
