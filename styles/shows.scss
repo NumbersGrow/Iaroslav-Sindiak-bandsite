@@ -17,6 +17,10 @@
     align-items: flex-start;
     position: relative;
 
+    @include desktop {
+        height: 35rem;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -36,6 +40,19 @@
         width: 70%;
         color: $primary-background;
         z-index: 10;
+
+        @include tablet {
+            padding: 4rem 0 0 2.25rem;
+            font-weight: 600;
+            font-size: 1.7rem;
+        }
+
+        @include desktop {
+            padding: 9rem 0 0 6rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+            justify-content: center;
+        }
     }
 
     &__title {
@@ -48,14 +65,19 @@
 
 
         @include tablet {
+            width: 80%;
             font-size: 4rem;
             font-weight: 600;
-            @include tablet-padding;
+            padding: 1rem 0 2.25rem 2.25rem;
         }
 
         @include desktop {
-            @include desktop-padding;
+            padding: 1rem 0 0 6rem;
             font-size: 3rem;
+            width: 50%;
+            justify-content: center;
+            align-items: normal;
+
         }
     }
 
@@ -64,21 +86,50 @@
         padding: 1rem 1rem 2rem 1rem;
 
         @include tablet {
-            width: 60%;
+            padding-left: 2.25rem;
+            margin-bottom: 3rem;
+            width: 70%;
+            height: 13rem;
+        }
+
+        @include desktop {
+            width: 35%;
+            position: absolute;
+            right: 5rem;
+            top: 10rem;
+            height: 11rem;
         }
     }
 }
 
 .main-content {
 
+    @include desktop {
+        display:flex;
+        flex-direction: row;
+    }
+
     &__title {
         padding: 2.2rem 0 1.1rem 1rem;
         font-size: 1.9rem;
+
+        @include tablet {
+            @include tablet-padding;
+            font-size: 2.8rem;
+        }
+
+        @include desktop {
+            font-size: 2rem;
+            padding: 3rem 5rem 0 6rem;
+        }
     }
 
     &__concerts-box {
-        // flex-wrap: wrap;
         
+        @include desktop {
+            width: 70%;
+            padding: 4rem 0 0 6rem;
+        }
     }
 
     &__concerts-tablet {
@@ -87,26 +138,37 @@
         @include tablet{
             display: flex;
             flex-direction: row;
-            padding-left: 1rem;
         }
 
         &--subtitle {
             text-transform: uppercase;
             color: $highlight;
             font-size: 0.8rem;
-            padding: 2rem 8rem 1rem 0;
+            padding: 0 0 1rem 2.25rem;
+            flex: 0.212;
+        }
+
+        &--subtitle-venue {
+            @include desktop {
+                margin: 0 7rem 0 1.2rem;
+            }
         }
     }
 
     &__concert-card {
         width: 100%;
         border-bottom: 0.15rem solid $text-on-dark;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding: 1rem 1rem 1rem 1rem;
 
         @include tablet {
-        display: flex;
-        align-items: center;
+            padding: 1rem 2rem 1rem 1.25rem;
+            margin: 0 1rem 0 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        @include desktop {
+            padding-right: 1rem;
         }
     }
 
@@ -126,7 +188,6 @@
         text-transform: uppercase;
         color: $highlight;
         font-size: 0.8rem;
-        padding: 1rem 1rem;
 
         @include tablet {
             display: none;
@@ -135,7 +196,7 @@
 
     &__date {
         font-weight: 600;
-        padding-left: 1rem;
+        padding: 0.8rem 0;
 
         @include tablet {
             padding: 0;
@@ -144,7 +205,7 @@
     }
 
     &__venue {
-        padding-left: 1rem;
+        padding: 0.8rem 0;
 
         @include tablet {
             padding: 0;
@@ -153,7 +214,7 @@
     }
 
     &__location {
-        padding-left: 1rem;
+        padding: 0.8rem 0;
 
         @include tablet{
             padding: 0;

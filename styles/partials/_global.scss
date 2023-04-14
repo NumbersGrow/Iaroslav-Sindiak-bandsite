@@ -114,6 +114,7 @@ h2, h3 {
     background-color: $header-footer-background;
     color: $text-on-dark;
     position: relative;
+    margin-top: 1rem;
 
     @include tablet {
         padding: 0;

@@ -30,7 +30,7 @@
         min-height: 60vh;
     }
 
-    &:before { //pseudo selector to create a darker piccure of the hero element
+    &:before { //pseudo selector to create a darker picture of the hero element
         content: '';
         position: absolute;
         background-color: $header-footer-background;
@@ -195,12 +195,33 @@
     &__title {
         font-size: 1.7rem;
         padding-bottom: 1rem;
+
+        @include tablet {
+            @include tablet-padding;
+            font-size: 2.8rem;
+        }
+
+        @include desktop {
+            display: flex;
+            padding: 3rem 6rem 0 6rem;
+            font-size: 1.6rem;
+        }
     }
 
     &__form {
         display: flex;
         border-bottom: solid 0.15rem $text-on-dark;
         padding-bottom: 1rem;
+
+        @include tablet {
+            margin: 1.5rem 5rem 0 5rem;
+            padding-bottom: 2rem;
+        }
+        @include desktop {
+            margin: 2rem 0;
+            width: 50%;
+            justify-content: center;
+        }
     }
 
     &__avatar {
@@ -225,13 +246,17 @@
     }
 
     &__input-name {
-        // border-radius: 0.25rem;
+        border-radius: 0.25rem;
         height: 2.25rem;
+        background-color: $gallery-background;
+        border: 0.063rem solid $text-on-dark;
     }
 
     &__input-comment {
         border-radius: 0.25rem;
         height: 6rem;
+        background-color: $gallery-background;
+        border: 0.063rem solid $text-on-dark;
     }
 
     &__button {
@@ -246,17 +271,47 @@
         border: 0;
         margin-top: 1rem;
         height: 3rem;
+
+        @include tablet {
+            text-align: center;
+            align-self: flex-end;
+            width: 11rem;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+    }
+
+    &__dynamic {
+
+        @include tablet {
+            @include tablet-larger-padding;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+        }
     }
 
     &__default {
         display: flex;
         flex-direction: column;
+
+        @include tablet {
+            @include tablet-larger-padding;
+        }
     }
 
     &__card-default {
         display: flex;
         border-bottom: solid 0.15rem $text-on-dark;
         padding: 1rem 0 1rem 0;
+
+        @include desktop {
+            width: 50%;
+            align-self: center;
+        }
     }
 
     &__avatar-box {
