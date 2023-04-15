@@ -390,6 +390,11 @@ h2, h3 {
     padding: 3rem 5rem 0 6rem;
   }
 }
+@media (min-width: 768px) {
+  .main-content__concerts-box {
+    padding: 0 1.5rem;
+  }
+}
 @media (min-width: 1280px) {
   .main-content__concerts-box {
     width: 70%;
@@ -409,8 +414,8 @@ h2, h3 {
   text-transform: uppercase;
   color: #Afafaf;
   font-size: 0.8rem;
-  padding: 0 0 1rem 2.25rem;
-  flex: 0.212;
+  padding: 0 0 1rem 1rem;
+  flex: 0.22;
 }
 @media (min-width: 1280px) {
   .main-content__concerts-tablet--subtitle-venue {
@@ -422,10 +427,11 @@ h2, h3 {
   border-bottom: 0.15rem solid #e1e1e1;
   padding: 1rem 1rem 1rem 1rem;
 }
+.main-content__concert-card:hover {
+  background-color: #fafafa;
+}
 @media (min-width: 768px) {
   .main-content__concert-card {
-    padding: 1rem 2rem 1rem 1.25rem;
-    margin: 0 1rem 0 1rem;
     display: flex;
     align-items: center;
   }

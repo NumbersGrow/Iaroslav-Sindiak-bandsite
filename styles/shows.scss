@@ -125,6 +125,11 @@
     }
 
     &__concerts-box {
+
+        @include tablet{
+            padding: 0 1.5rem;
+        }
+
         
         @include desktop {
             width: 70%;
@@ -144,8 +149,8 @@
             text-transform: uppercase;
             color: $highlight;
             font-size: 0.8rem;
-            padding: 0 0 1rem 2.25rem;
-            flex: 0.212;
+            padding: 0 0 1rem 1rem;
+            flex: 0.22;
         }
 
         &--subtitle-venue {
@@ -159,10 +164,11 @@
         width: 100%;
         border-bottom: 0.15rem solid $text-on-dark;
         padding: 1rem 1rem 1rem 1rem;
+        &:hover {
+            background-color: $gallery-background;
+          }
 
         @include tablet {
-            padding: 1rem 2rem 1rem 1.25rem;
-            margin: 0 1rem 0 1rem;
             display: flex;
             align-items: center;
         }

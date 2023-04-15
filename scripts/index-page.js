@@ -79,7 +79,7 @@ const customForm = document.querySelector(".comment-box__form"); //same as a for
 const dynamicBox = document.querySelector(".comment-box__dynamic"); //new placeholder for comments
 // dynamicBox.classList.add("comment-box__dynamic");
     
-const notes = []; //create a new array for dynamic comments
+const notes = []; //create a new array for dynamic comments (CAN USE = commentsArr)
     
 customForm.addEventListener("submit", function (event) {
 event.preventDefault();
@@ -87,7 +87,7 @@ const dynamicNameVal = event.target.username.value; // itemInput matches form in
 const dynamicComVal = event.target.comment.value;
 // check the both input fields have a value
 if (dynamicNameVal !== "" && dynamicComVal !== "") {
-notes.push({
+notes.unshift({
     title: dynamicNameVal,
     content: dynamicComVal,
 });

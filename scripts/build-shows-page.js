@@ -37,8 +37,12 @@ const showsBox = document.querySelector(".main-content__concerts-box");
 function appendShows(concerts, BoxElem) {
 concerts.forEach(function (show) {
 // create <div> for show card
-const showCard = document.createElement("div"); //it was li item showLi
-showCard.classList.add("main-content__concert-card"); //it was main-content__list-item
+const showCard = document.createElement("div");
+showCard.classList.add("main-content__concert-card"); 
+// make selected (clecked) row with a show change background color while selected
+showCard.addEventListener("click", () => {
+      showCard.style.backgroundColor = "#E1E1E1";
+  });
 // create <p> date subtitle
 const showSubtitleDate = document.createElement("p");
 showSubtitleDate.classList.add("main-content__subtitle");
