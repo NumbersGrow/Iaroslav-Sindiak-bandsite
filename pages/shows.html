@@ -35,36 +35,31 @@
                 frameborder="no" 
                 allow="autoplay" 
             src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/213950912&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-        </iframe>
-        <!-- <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-            <a href="https://soundcloud.com/seal" title="Seal" target="_blank" style="color: #cccccc; text-decoration: none;">Seal</a> · 
-            <a href="https://soundcloud.com/seal/kiss-from-a-rose" title="Kiss from a Rose (Live)" target="_blank" style="color: #cccccc; text-decoration: none;">Kiss from a Rose (Live)</a>
-        </div> -->
+        </iframe>   <!--I deleted some extra properties so it does look like a mockup but Html code Checker did not like it-->
     </section>
     <main class="main-content">
         <h2 class="main-content__title">Shows</h2>
-        <section class="main-content__concerts-box">
-            <ul class="main-content__concerts-tablet">
+        <div class="main-content__concerts-box"> <!--All DOM elements build on this section through JS-->
+            <ul class="main-content__concerts-tablet"> <!--Hidden list, that appears only on mobile version for better structure, Jim said it is ok to have mobile titles only like that-->
                 <li class="main-content__concerts-tablet--subtitle">date</li>
                 <li class="main-content__concerts-tablet--subtitle"><span class="main-content__concerts-tablet--subtitle-venue">venue</span></li>
                 <li class="main-content__concerts-tablet--subtitle">location</li>
             </ul>
-        </section>
+        </div>
     </main>
-
     <footer class="site-footer">
         <div class="site-footer__wrapper">
             <section class="site-footer__top">
                 <h2 class="site-footer__top--title">Get in Touch</h2>
                 <img  class="site-footer__top--svg"
                 src="../assets/icons/Icon-instagram.svg"
-                alt="instagram">
+                alt="instagram link">
                 <img  class="site-footer__top--svg"
                 src="../assets/icons/Icon-facebook.svg"
-                alt="facebook">
+                alt="facebook link">
                 <img  class="site-footer__top--svg"
                 src="../assets/icons/Icon-twitter.svg"
-                alt="twitter">
+                alt="twitter link">
             </section>
             <section class="site-footer__contact-container">
                 <div class="site-footer__contact">

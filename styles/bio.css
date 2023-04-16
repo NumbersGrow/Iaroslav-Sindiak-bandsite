@@ -638,4 +638,7 @@ h2, h3 {
 .comment-box__date-default {
   color: #Afafaf;
   font-size: 1rem;
+}
+.comment-box__comment-default {
+  display: flex;
 }/*# sourceMappingURL=bio.css.map */

@@ -32,17 +32,14 @@ const concertsArr = [ //array with all shows
 ];
 
 const showsBox = document.querySelector(".main-content__concerts-box");
-
 // append array of shows to dom element
-function appendShows(concerts, BoxElem) {
+function displayShows(concerts, BoxElem) {
 concerts.forEach(function (show) {
 // create <div> for show card
 const showCard = document.createElement("div");
 showCard.classList.add("main-content__concert-card"); 
-// make selected (clecked) row with a show change background color while selected
-showCard.addEventListener("click", () => {
-      showCard.style.backgroundColor = "#E1E1E1";
-  });
+// make selected (clicked) row with a show change background color while selected
+showCard.tabIndex = 0;
 // create <p> date subtitle
 const showSubtitleDate = document.createElement("p");
 showSubtitleDate.classList.add("main-content__subtitle");
@@ -86,4 +83,4 @@ showCard.appendChild(showButton);
   }
   
   // call appendShows function
-  appendShows(concertsArr, showsBox);
+  displayShows(concertsArr, showsBox);

@@ -1,26 +1,20 @@
-const commentsArr = [ //array with default comments
+const commentsArr = [ //array with comments
     {
     name: "Connor Walton",
     comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    id: "b79f9700-1148-4ed8-ba65-38c3e2ab28c2",
-    likes: 0,
     timestamp: "02/17/2021"
     },
     {
     name: "Emilie Beach",
     comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    id: "1d65acf3-8b27-4342-bea7-fc53cf552f31",
-    likes: 0,
     timestamp: "01/09/2021"
     },
     {
     name: "Miles Acosta",
     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    id: "2cc81763-74a6-4ee1-9a5a-d8906981ece1",
-    likes: 0,
     timestamp: "12/20/2020"
     }
-    ]
+]
 
 const formBox = document.querySelector(".comment-box__title"); //last element before we start DOM manipulation
 //create form dynamically
@@ -77,9 +71,8 @@ formDiv.appendChild(formButton);
 //code for posting comments
 const customForm = document.querySelector(".comment-box__form"); //same as a form we used initially
 const dynamicBox = document.querySelector(".comment-box__dynamic"); //new placeholder for comments
-// dynamicBox.classList.add("comment-box__dynamic");
     
-const notes = []; //create a new array for dynamic comments (CAN USE = commentsArr)
+const notes = []; //create a new array for dynamic comments
     
 customForm.addEventListener("submit", function (event) {
 event.preventDefault();
@@ -87,9 +80,9 @@ const dynamicNameVal = event.target.username.value; // itemInput matches form in
 const dynamicComVal = event.target.comment.value;
 // check the both input fields have a value
 if (dynamicNameVal !== "" && dynamicComVal !== "") {
-notes.unshift({
+notes.unshift({                                
     title: dynamicNameVal,
-    content: dynamicComVal,
+    content: dynamicComVal
 });
     renderNotes();
     event.target.reset();
@@ -97,10 +90,13 @@ notes.unshift({
         alert("please enter some text");
     }
 });
-    //create a function to post one comment at once
+
+//create default comment boxes
+const commentBox = document.querySelector(".comment-box__default"); //placeholder for default comment section
+//create a function to post one comment at once
 function renderNotes() {
     dynamicBox.innerHTML = ""; //make sure there is no html repeated elements before posting new comments
-    notes.forEach(function (note) {
+    notes.forEach(function (note) {  
     //card for dynamic comments
     const commentBoxCardDynamic = document.createElement("div");
     commentBoxCardDynamic.classList.add("comment-box__card-default"); 
@@ -120,15 +116,17 @@ function renderNotes() {
     const dynamicName = document.createElement("h3")
     dynamicName.classList.add("comment-box__name-default");
     dynamicName.innerText = note.title;
-    //post your Date
+
+    // post your Date NOT WORKING yet
     const dynamicDate = document.createElement("p");
     dynamicDate.classList.add("comment-box__date-default");
-    dynamicDate.innerText = "today";
+    // const bioDate = new Date(note.timestamp);
+    // getDate = bioDate.toLocaleString("en-US");
+ 
     //post your Comment
     const dynamicComment = document.createElement("p");
     dynamicComment.classList.add("comment-box__comment-default");
     dynamicComment.innerText = note.content;
-    
     //append all elements to the card
     commentBoxCardDynamic.appendChild(avatarBoxDynamic);
     avatarBoxDynamic.appendChild(avatarDynamic);
@@ -142,11 +140,9 @@ function renderNotes() {
 }
 renderNotes();
 
-//create default comment boxes
-const commentBox = document.querySelector(".comment-box__default"); //placeholder for default comment section 
 
 // append array of shows to dom element
-function appendComments(comments, boxElem) { 
+function displayComments(comments, boxElem) { 
 comments.forEach(function (comment) {
 // create <div> card for default comments
 const commentBoxCard = document.createElement("div");
@@ -191,5 +187,5 @@ contentBox.appendChild(defaultComment);
 };
 
 // call appendComments function
-appendComments(commentsArr, commentBox);
+displayComments(commentsArr, commentBox);
 

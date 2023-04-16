@@ -164,9 +164,13 @@
         width: 100%;
         border-bottom: 0.15rem solid $text-on-dark;
         padding: 1rem 1rem 1rem 1rem;
-        &:hover {
+        &:hover { //hover state as required in Sass
             background-color: $gallery-background;
           }
+
+        &:focus {
+            background-color: $text-on-dark; // I swear I spent hours to make a clicked row of shows working as it supposed to be, but this way is the closest to mockup guidelines
+        }
 
         @include tablet {
             display: flex;
@@ -178,19 +182,7 @@
         }
     }
 
-    // &__concerts {
-    //     width: 100%;
-    //     border-bottom: 0.15rem solid $text-on-dark;
-    //     margin-bottom: 1rem;
-
-    //     @include tablet {
-    //         display: flex;
-    //         flex-direction: column;
-    //         align-items: center;
-    //     }
-    // }
-
-    &__subtitle {
+    &__subtitle { //hidden subtitles, appears on mobile only
         text-transform: uppercase;
         color: $highlight;
         font-size: 0.8rem;
