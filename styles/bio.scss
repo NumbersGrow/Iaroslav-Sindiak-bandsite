@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+::placeholder { 
+    color: black;
+    padding: 0.5rem 0 0.5rem 0.5rem;
+  }
+
 .hero-banner {
     background-image: url(../assets/images/hero-bio.jpg);
     background-position: center;
@@ -25,7 +30,7 @@
         min-height: 60vh;
     }
 
-    &:before { //pseudo selector to create a darker piccure of the hero element
+    &:before { //pseudo selector to create a darker picture of the hero element
         content: '';
         position: absolute;
         background-color: $header-footer-background;
@@ -182,4 +187,167 @@
         }
     }
 
+}
+
+.comment-box {
+    margin: 1.5rem 1rem 1rem 1rem;
+
+    &__title {
+        font-size: 1.7rem;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            @include tablet-padding;
+            font-size: 2.8rem;
+        }
+
+        @include desktop {
+            display: flex;
+            padding: 3rem 6rem 0 6rem;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column; //TEST
+        border-bottom: solid 0.15rem $text-on-dark;
+        padding-bottom: 1rem;
+
+        @include tablet {
+            margin: 1.5rem 5rem 0 5rem;
+            padding-bottom: 2rem;
+        }
+        @include desktop {
+            margin: 2rem 0;
+            width: 50%;
+            justify-content: center;
+        }
+    }
+
+    &__avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        margin-top: 2.5rem;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__label {
+        text-transform: uppercase;
+        color: $highlight;
+        font-weight: 600;
+        font-size: 0.8rem;
+        padding: 1rem 0 0.5rem 0;
+    }
+
+    &__input-name {
+        border-radius: 0.25rem;
+        height: 2.25rem;
+        background-color: $gallery-background;
+        border: 0.063rem solid $text-on-dark;
+    }
+
+    &__input-comment {
+        border-radius: 0.25rem;
+        height: 6rem;
+        background-color: $gallery-background;
+        border: 0.063rem solid $text-on-dark;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        background-color: $header-footer-background;
+        color: $primary-background;
+        font-size: 1.3rem;
+        border-radius: 0.5rem;
+        border: 0;
+        margin-top: 1rem;
+        height: 3rem;
+
+        @include tablet {
+            text-align: center;
+            align-self: flex-end;
+            width: 11rem;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+        }
+    }
+
+    &__dynamic {
+
+        @include tablet {
+            @include tablet-larger-padding;
+        }
+
+        @include desktop {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+        }
+    }
+
+    // &__form {
+    //     display: flex;
+    //     flex-direction: column;
+
+    //     @include tablet {
+    //         @include tablet-larger-padding;
+    //     }
+    // }
+
+    &__card-default {
+        display: flex;
+        border-bottom: solid 0.15rem $text-on-dark;
+        padding: 1rem 0 1rem 0;
+
+        @include desktop {
+            width: 50%;
+            align-self: center;
+        }
+    }
+
+    &__avatar-box {
+        display: flex;
+        padding-right: 1rem;
+    }
+
+    &__avatar-default {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: $text-on-dark;
+    }
+
+    &__wrapper-default {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__top-box {
+        display: flex;
+        padding-bottom: 0.6rem;
+    }
+
+    &__name-default {
+        flex: 50%;
+        font-size: 1rem;
+    }
+
+    &__date-default {
+        color: $highlight;
+        font-size: 1rem;
+    }
+
+    &__comment-default {
+        display: flex;
+    }
 }
