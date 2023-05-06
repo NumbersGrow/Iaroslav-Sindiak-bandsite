@@ -210,18 +210,24 @@
 
     &__form {
         display: flex;
-        flex-direction: column; //TEST
         border-bottom: solid 0.15rem $text-on-dark;
         padding-bottom: 1rem;
 
         @include tablet {
-            margin: 1.5rem 5rem 0 5rem;
-            padding-bottom: 2rem;
+            // @include tablet-larger-padding;
+            // margin: 1.5rem 5rem 0 5rem;
+            // padding-bottom: 2rem;
+            
+            }
+
         }
-        @include desktop {
-            margin: 2rem 0;
-            width: 50%;
-            justify-content: center;
+
+    &__form-custom {
+        display: flex;
+        width: 100%;
+
+        @include tablet {
+            @include tablet-larger-padding;
         }
     }
 
@@ -283,6 +289,9 @@
     }
 
     &__dynamic {
+        display: flex;
+        flex-direction: column;
+
 
         @include tablet {
             @include tablet-larger-padding;
@@ -294,15 +303,6 @@
             align-self: center;
         }
     }
-
-    // &__form {
-    //     display: flex;
-    //     flex-direction: column;
-
-    //     @include tablet {
-    //         @include tablet-larger-padding;
-    //     }
-    // }
 
     &__card-default {
         display: flex;
@@ -330,6 +330,7 @@
     &__wrapper-default {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     &__top-box {
