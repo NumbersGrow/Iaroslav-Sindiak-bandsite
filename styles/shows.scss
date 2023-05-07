@@ -103,7 +103,6 @@
 }
 
 .main-content {
-
     position: relative;
 
     @include desktop {
@@ -161,7 +160,6 @@
         }
 
         &--subtitle-venue {
-
             @include tablet{
                 padding-left: 0.3rem;
             }
@@ -172,7 +170,6 @@
         }
 
         &--subtitle-location {
-
             @include tablet{
                 padding-left: 0.7rem;
             }

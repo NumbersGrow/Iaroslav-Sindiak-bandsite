@@ -3,8 +3,6 @@ const key = "5521499d-cfcd-4d46-a655-ade2fb067982";
 // create element for all comments posting
 const dynamicBox = document.querySelector(".comment-box__dynamic"); //new placeholder for comments
 const formBox = document.querySelector(".comment-box__form"); //placeholder for comment Form
-
-// const formBox = document.querySelector(".comment-box__title"); //last element before we start DOM manipulation
 //create form dynamically
 const form = document.createElement("form");
 form.classList.add("comment-box__form-custom");
@@ -144,5 +142,4 @@ formBox.addEventListener("submit", (event) => {
     alert("please enter some text");
 }
 });
-
 
