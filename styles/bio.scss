@@ -186,7 +186,6 @@
             }
         }
     }
-
 }
 
 .comment-box {
@@ -210,19 +209,14 @@
 
     &__form {
         display: flex;
-        border-bottom: solid 0.15rem $text-on-dark;
         padding-bottom: 1rem;
 
-        @include tablet {
-            // @include tablet-larger-padding;
-            // margin: 1.5rem 5rem 0 5rem;
-            // padding-bottom: 2rem;
-            
-            }
-
+        @include desktop {
+            padding: 0.5rem 16rem 0.5rem 16rem;
         }
+    }
 
-    &__form-custom {
+    &__form-custom { // class for actual form for better structure
         display: flex;
         width: 100%;
 
@@ -306,7 +300,8 @@
 
     &__card-default {
         display: flex;
-        border-bottom: solid 0.15rem $text-on-dark;
+        border-bottom: solid 0.05rem $text-on-dark;
+        border-top: solid 0.05rem $text-on-dark;
         padding: 1rem 0 1rem 0;
 
         @include desktop {

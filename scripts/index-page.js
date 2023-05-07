@@ -1,21 +1,3 @@
-// const commentsArr = [ 
-//     {
-//     name: "Connor Walton",
-//     comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//     timestamp: "02/17/2021"
-//     },
-//     {
-//     name: "Emilie Beach",
-//     comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//     timestamp: "01/09/2021"
-//     },
-//     {
-//     name: "Miles Acosta",
-//     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//     timestamp: "12/20/2020"
-//     }
-// ]
-
 // save api key as a variable after /register
 const key = "5521499d-cfcd-4d46-a655-ade2fb067982";
 // create element for all comments posting
@@ -135,18 +117,18 @@ function getComments() {
   
 getComments();
 
-
-// function postNewComment() {
-//         getComments();
-// }
-  
+// posting new comment
 formBox.addEventListener("submit", (event) => {
     event.preventDefault();
     // posting comment to API
+    const dynamicNameVal = event.target.name.value; // Name input matches form input value of the name attribute
+    const dynamicComVal = event.target.comment.value;
+    // check the both input fields have a value
+    if (dynamicNameVal !== "" && dynamicComVal !== "") {
     axios
       .post(`https://project-1-api.herokuapp.com/comments?api_key=${key}`, {
-        name: event.target.name.value,
-        comment: event.target.comment.value,
+        name: dynamicNameVal,
+        comment: dynamicComVal,
       })
       .then((response) => {
         console.log(response);
@@ -158,32 +140,9 @@ formBox.addEventListener("submit", (event) => {
     .catch((error) => {
         console.error(error);
     });
+  } else {
+    alert("please enter some text");
+}
 });
-
-
-
-
-//code for posting comments
-// const customForm = document.querySelector(".comment-box__form"); //same as a form we used initially
-
-    
-// const notes = []; 
-    
-// customForm.addEventListener("submit", function (event) {
-// event.preventDefault();
-// const dynamicNameVal = event.target.username.value; // itemInput matches form input value of the name attr
-// const dynamicComVal = event.target.comment.value;
-// // check the both input fields have a value
-// if (dynamicNameVal !== "" && dynamicComVal !== "") {
-// notes.unshift({                                
-//     title: dynamicNameVal,
-//     content: dynamicComVal
-// });
-//     renderNotes();
-//     event.target.reset();
-//     } else {
-//         alert("please enter some text");
-//     }
-// });
 
 

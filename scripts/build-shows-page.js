@@ -2,7 +2,7 @@
 const key = "5521499d-cfcd-4d46-a655-ade2fb067982";
 // create element for all shows posting
 const showsBox = document.querySelector(".main-content__concerts-box");
-// append array of shows to dom element
+// append array of shows to dom element and take shows from API
 function displayShows() {
     axios
         .get(`https://project-1-api.herokuapp.com/showdates?api_key=${key}`)
@@ -62,7 +62,5 @@ function displayShows() {
             console.log(error);
         });       
 }
-
-  
-  // call appendShows function
+  // call Shows function
   displayShows();
