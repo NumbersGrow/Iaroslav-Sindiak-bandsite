@@ -186,7 +186,6 @@
             }
         }
     }
-
 }
 
 .comment-box {
@@ -210,17 +209,19 @@
 
     &__form {
         display: flex;
-        border-bottom: solid 0.15rem $text-on-dark;
         padding-bottom: 1rem;
 
-        @include tablet {
-            margin: 1.5rem 5rem 0 5rem;
-            padding-bottom: 2rem;
-        }
         @include desktop {
-            margin: 2rem 0;
-            width: 50%;
-            justify-content: center;
+            padding: 0.5rem 16rem 0.5rem 16rem;
+        }
+    }
+
+    &__form-custom { // class for actual form for better structure
+        display: flex;
+        width: 100%;
+
+        @include tablet {
+            @include tablet-larger-padding;
         }
     }
 
@@ -282,6 +283,9 @@
     }
 
     &__dynamic {
+        display: flex;
+        flex-direction: column;
+
 
         @include tablet {
             @include tablet-larger-padding;
@@ -294,18 +298,10 @@
         }
     }
 
-    &__default {
-        display: flex;
-        flex-direction: column;
-
-        @include tablet {
-            @include tablet-larger-padding;
-        }
-    }
-
     &__card-default {
         display: flex;
-        border-bottom: solid 0.15rem $text-on-dark;
+        border-bottom: solid 0.05rem $text-on-dark;
+        border-top: solid 0.05rem $text-on-dark;
         padding: 1rem 0 1rem 0;
 
         @include desktop {
@@ -329,6 +325,7 @@
     &__wrapper-default {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     &__top-box {

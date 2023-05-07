@@ -39,12 +39,12 @@
     </section>
     <main class="main-content">
         <h2 class="main-content__title">Shows</h2>
+        <ul class="main-content__concerts-tablet"> <!--Hidden list, that appears only on tablet version for better structure, Jim said it is ok to have mobile titles only like that-->
+            <li class="main-content__concerts-tablet--subtitle">date</li>
+            <li class="main-content__concerts-tablet--subtitle"><span class="main-content__concerts-tablet--subtitle-venue">venue</span></li>
+            <li class="main-content__concerts-tablet--subtitle"><span class="main-content__concerts-tablet--subtitle-location">location</span></li>
+        </ul>
         <div class="main-content__concerts-box"> <!--All DOM elements build on this section through JS-->
-            <ul class="main-content__concerts-tablet"> <!--Hidden list, that appears only on mobile version for better structure, Jim said it is ok to have mobile titles only like that-->
-                <li class="main-content__concerts-tablet--subtitle">date</li>
-                <li class="main-content__concerts-tablet--subtitle"><span class="main-content__concerts-tablet--subtitle-venue">venue</span></li>
-                <li class="main-content__concerts-tablet--subtitle">location</li>
-            </ul>
         </div>
     </main>
     <footer class="site-footer">
@@ -94,6 +94,7 @@
                 </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="../scripts/build-shows-page.js"></script>
 </body>
 </html>
